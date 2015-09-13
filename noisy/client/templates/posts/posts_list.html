@@ -1,0 +1,31 @@
+<template name="postsList">
+	<div class="component-comments">
+		<div class="comment-list">
+			{{#each posts}}
+				{{#if equals type 1}}
+					{{> textItem}}
+				{{/if}}
+				{{#if equals type 2}}
+					{{> voiceItem}}
+				{{/if}}
+				{{#if equals type 3}}
+					{{> videoItem}}
+				{{/if}}
+			{{/each}}
+		</div>
+		<div class="row voice-panel">
+			<span class="col-2 ctrl"><i class="icon-reco ctrl-btn" state="stop"></i></span>
+			<span class="col-10 wave">
+				<canvas class="voiceWave"></canvas>
+				<audio class="sound"></audio>
+			</span>
+		</div>
+
+		<div class="comment-input">
+			<div class="col-11">
+				<div class="chat-input" contenteditable="true"></div>
+			</div>
+			<div class="col-1"><i id="voiceChat" class="icon-voice"></i></div>
+		</div>
+	</div>
+</template>
